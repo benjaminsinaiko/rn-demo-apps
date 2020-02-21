@@ -1,17 +1,19 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import SearchScreen from './src/screens/SearchScreen';
-import ResultsShowScreen from './src/screens/ResultsShowScreen';
+import HomeScreen from './src/screens/HomeScreen';
+import SearchScreen from './src/foodSearch/screens/SearchScreen';
+import ResultsShowScreen from './src/foodSearch/screens/ResultsShowScreen';
 
 const navigator = createStackNavigator(
   {
+    Home: HomeScreen,
     Search: SearchScreen,
     ResultsShow: ResultsShowScreen
   },
   {
-    initialRouteName: 'Search',
+    initialRouteName: 'Home',
     defaultNavigationOptions: {
-      title: 'Business Search'
+      title: 'Choose App'
     }
   }
 );
