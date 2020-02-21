@@ -12,7 +12,7 @@ const HomeScreen = ({ navigation }) => {
       </TouchableOpacity>
       <TouchableOpacity
         style={[styles.button, { backgroundColor: '#03a2ec' }]}
-        onPress={() => navigation.navigate('Search')}
+        onPress={() => navigation.navigate('Index')}
       >
         <Text style={styles.buttonText}>Blog Posts</Text>
       </TouchableOpacity>
