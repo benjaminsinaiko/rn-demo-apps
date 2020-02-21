@@ -18,13 +18,13 @@ const SearchScreen = () => {
 
   return (
     <>
-      <SearchBar term={term} onTermChange={setTerm} onTermSubmit={searchApi} />
+      <SearchBar term={term} onTermChange={setTerm} onTermSubmit={() => searchApi(term)} />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <ScrollView>
-        <ResultsList results={filterResultsByPrice('$')} title='Cost Effective' />
-        <ResultsList results={filterResultsByPrice('$$')} title='Pricey' />
-        <ResultsList results={filterResultsByPrice('$$$')} title='Bit Pricier' />
-        <ResultsList results={filterResultsByPrice('$$$$')} title='Big Spender' />
+        <ResultsList results={filterResultsByPrice('$')} title='Cost Effective - $' />
+        <ResultsList results={filterResultsByPrice('$$')} title='Pricey - $$' />
+        <ResultsList results={filterResultsByPrice('$$$')} title='Bit Pricier - $$$' />
+        <ResultsList results={filterResultsByPrice('$$$$')} title='Big Spender - $$$$' />
       </ScrollView>
     </>
   );
