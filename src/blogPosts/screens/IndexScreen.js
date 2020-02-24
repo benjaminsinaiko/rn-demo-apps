@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { View, Text, Button, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
+import { withNavigation } from 'react-navigation';
 import { Feather } from '@expo/vector-icons';
-import { Context as BlogContext, Provider as BlogProvider } from '../context/BlogContext';
+import { Context as BlogContext } from '../context/BlogContext';
 
-const IndexScreen = () => {
+const IndexScreen = ({ navigation }) => {
   const { state, addBlogPost, deleteBlogPost } = useContext(BlogContext);
 
   return (
@@ -14,14 +15,16 @@ const IndexScreen = () => {
         keyExtractor={state => state.title}
         renderItem={({ item }) => {
           return (
-            <View style={styles.row}>
-              <Text style={styles.title}>
-                {item.title} - {item.id}
-              </Text>
-              <TouchableOpacity onPress={() => deleteBlogPost(item.id)}>
-                <Feather style={styles.icon} name='trash' />
-              </TouchableOpacity>
-            </View>
+            <TouchableOpacity onPress={() => navigation.navigate('Show', { id: item.id })}>
+              <View style={styles.row}>
+                <Text style={styles.title}>
+                  {item.title} - {item.id}
+                </Text>
+                <TouchableOpacity onPress={() => deleteBlogPost(item.id)}>
+                  <Feather style={styles.icon} name='trash' />
+                </TouchableOpacity>
+              </View>
+            </TouchableOpacity>
           );
         }}
       />
@@ -46,12 +49,4 @@ const styles = StyleSheet.create({
   }
 });
 
-const BlogApp = IndexScreen;
-
-export default () => {
-  return (
-    <BlogProvider>
-      <BlogApp />
-    </BlogProvider>
-  );
-};
+export default withNavigation(IndexScreen);
