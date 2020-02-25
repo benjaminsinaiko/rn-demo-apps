@@ -33,6 +33,12 @@ const ResultsShowScreen = ({ navigation }) => {
   );
 };
 
+ResultsShowScreen.navigationOptions = ({ navigation }) => {
+  return {
+    title: navigation.getParam('name')
+  };
+};
+
 const styles = StyleSheet.create({
   image: {
     height: 200,

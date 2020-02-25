@@ -22,7 +22,7 @@ const navigator = createStackNavigator(
   {
     initialRouteName: 'Home',
     defaultNavigationOptions: {
-      title: 'Choose App'
+      title: 'Apps'
     }
   }
 );

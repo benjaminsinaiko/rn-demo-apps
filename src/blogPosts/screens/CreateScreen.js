@@ -25,6 +25,12 @@ const CreateScreen = ({ navigation }) => {
   );
 };
 
+CreateScreen.navigationOptions = () => {
+  return {
+    title: 'Create Post'
+  };
+};
+
 const styles = StyleSheet.create({
   label: {
     fontSize: 20,

@@ -30,6 +30,12 @@ const SearchScreen = ({ navigation }) => {
   );
 };
 
+SearchScreen.navigationOptions = () => {
+  return {
+    title: 'Food Search'
+  };
+};
+
 const styles = StyleSheet.create({
   // style
 });
