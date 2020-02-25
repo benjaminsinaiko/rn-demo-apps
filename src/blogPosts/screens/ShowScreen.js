@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
+import { EvilIcons } from '@expo/vector-icons';
 import { Context as BlogContext } from '../context/BlogContext';
 
 const ShowScreen = ({ navigation }) => {
@@ -24,7 +24,7 @@ ShowScreen.navigationOptions = ({ navigation }) => {
         <TouchableOpacity
           onPress={() => navigation.navigate('Edit', { id: navigation.getParam('id') })}
         >
-          <FontAwesome name='pencil' size={25} />
+          <EvilIcons name='pencil' size={35} />
         </TouchableOpacity>
       );
     }
