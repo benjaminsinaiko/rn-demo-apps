@@ -7,6 +7,7 @@ import ResultsShowScreen from './src/foodSearch/screens/ResultsShowScreen';
 import IndexScreen from './src/blogPosts/screens/IndexScreen';
 import ShowScreen from './src/blogPosts/screens/ShowScreen';
 import CreateScreen from './src/blogPosts/screens/CreateScreen';
+import EditScreen from './src/blogPosts/screens/EditScreen';
 
 import { Provider as BlogProvider } from './src/blogPosts/context/BlogContext';
 
@@ -17,7 +18,8 @@ const navigator = createStackNavigator(
     ResultsShow: ResultsShowScreen,
     Index: IndexScreen,
     Show: ShowScreen,
-    Create: CreateScreen
+    Create: CreateScreen,
+    Edit: EditScreen
   },
   {
     initialRouteName: 'Home',

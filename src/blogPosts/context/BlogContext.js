@@ -1,8 +1,6 @@
 import React from 'react';
 import createDataContext from './createDataContext';
 
-const BlogContext = React.createContext();
-
 const blogReducer = (state, action) => {
   switch (action.type) {
     case 'add_blogpost': {
@@ -38,5 +36,5 @@ const deleteBlogPost = dispatch => {
 export const { Context, Provider } = createDataContext(
   blogReducer,
   { addBlogPost, deleteBlogPost },
-  []
+  [{ id: 1, title: 'default post', content: 'test post' }]
 );
