@@ -6,6 +6,7 @@ import SearchScreen from './src/foodSearch/screens/SearchScreen';
 import ResultsShowScreen from './src/foodSearch/screens/ResultsShowScreen';
 import IndexScreen from './src/blogPosts/screens/IndexScreen';
 import ShowScreen from './src/blogPosts/screens/ShowScreen';
+import CreateScreen from './src/blogPosts/screens/CreateScreen';
 
 import { Provider as BlogProvider } from './src/blogPosts/context/BlogContext';
 
@@ -15,10 +16,11 @@ const navigator = createStackNavigator(
     Search: SearchScreen,
     ResultsShow: ResultsShowScreen,
     Index: IndexScreen,
-    Show: ShowScreen
+    Show: ShowScreen,
+    Create: CreateScreen
   },
   {
-    initialRouteName: 'Index',
+    initialRouteName: 'Home',
     defaultNavigationOptions: {
       title: 'Choose App'
     }
